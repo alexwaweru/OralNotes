@@ -3,18 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <title>OraNotes</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Bootstrap Tutorial</title>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
+  <div class="row">
+
+
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.85; position:-webkit-sticky;">
+    <div class="container-fluid" style="position:sticky;">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#" style="font-size:40px;">OraNotes</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="#" class="btn">New </a></li>
+        <li><a href="#" class = "btn ">Save</a></li>
+        <li><a href="#" class = "btn navbar-right">Stop</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+
+  </div>
+
+<br>
   <div class="words" contenteditable>
   </div>
+
+
+
+
+
+
 
 <script>
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
   const recognition = new SpeechRecognition();
   recognition.interimResults = true;
-  recognition.lang = 'en-US';
+  recognition.lang = 'en-UK';
 
   let p = document.createElement('p');
   const words = document.querySelector('.words');
@@ -29,11 +64,15 @@
       const poopScript = transcript.replace(/poop|poo|shit|dump/gi, '💩');
       p.textContent = poopScript;
 
+
       if (e.results[0].isFinal) {
         p = document.createElement('p');
         words.appendChild(p);
       }
   });
+
+
+
 
   recognition.addEventListener('end', recognition.start);
 
@@ -42,7 +81,7 @@
 </script>
 
 
-  <style>
+<style>
     html {
       font-size: 10px;
     }
@@ -80,7 +119,9 @@
       border: 1px solid;
       border-color: transparent #efe4e4;
     }
-  </style>
+
+
+</style>
 
 </body>
 </html>
