@@ -35,7 +35,7 @@
   </div>
 
 <br>
-  <div class="words" contenteditable>
+  <div id="text" class="words" contenteditable>
   </div>
 
 
@@ -83,10 +83,17 @@
     // Make the Recognition stop working
   }
 
-  document.getElementById('btnSave').addEventListener('click', saveWork);
+  const save = document.getElementById('btnSave');
+  save.addEventListener('click', saveWork);
   function saveWork(){
-    // Save the work into a txt file
+    text = p.innerHTML;
+    type = 'text/plain';
+    name = 'document.txt';
+    var file = new Blob([text], {type: type});
+    save.href = URL.createObjectURL(file);
+    save.download = name;
   }
+
 
 </script>
 
