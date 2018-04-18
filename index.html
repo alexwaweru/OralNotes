@@ -86,7 +86,7 @@
   const save = document.getElementById('btnSave');
   save.addEventListener('click', saveWork);
   function saveWork(){
-    text = p.innerHTML;
+    text = document.getElementById("text").innerHTML;
     type = 'text/plain';
     name = 'document.txt';
     var file = new Blob([text], {type: type});
