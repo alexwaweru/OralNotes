@@ -24,7 +24,7 @@
       <ul class="nav navbar-nav">
         <li><a href="index.html" class="btn">New </a></li>
         <li><a href="#" id="btnSave" class = "btn ">Save</a></li>
-        <li><a href="#" id="btnStop" class = "btn navbar-right">Start</a></li>
+        <li><a href="#" id="btnStart" class = "btn navbar-right">Start</a></li>
         <li><a href="#" id="btnStop" class = "btn navbar-right">Stop</a></li>
 
       </ul>
@@ -82,6 +82,11 @@
   document.getElementById('btnStop').addEventListener('click', stopRecognition);
   function stopRecognition(){
     // Make the Recognition stop working
+  }
+
+  document.getElementById('btnStart').addEventListener('click', startRecognition);
+  function startRecognition(){
+    // Make the Recognition start working
   }
 
   const save = document.getElementById('btnSave');
