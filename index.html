@@ -50,7 +50,7 @@
 
   const recognition = new SpeechRecognition();
   recognition.interimResults = true;
-  recognition.lang = 'en-UK';
+  recognition.lang = 'en-US';
 
   let p = document.createElement('p');
   const words = document.querySelector('.words');
@@ -76,17 +76,20 @@
 
 
   recognition.addEventListener('end', recognition.start);
+  recognition.addEventListener('end', recognition.stop);
 
-  recognition.start();
+  //recognition.start();
 
   document.getElementById('btnStop').addEventListener('click', stopRecognition);
   function stopRecognition(){
     // Make the Recognition stop working
+    recognition.stop();
   }
 
   document.getElementById('btnStart').addEventListener('click', startRecognition);
   function startRecognition(){
     // Make the Recognition start working
+    recognition.start();
   }
 
   const save = document.getElementById('btnSave');
